@@ -41,8 +41,9 @@ private ArrayList<WeatherModel> weatherModels;
         holder.temperature_tv.setText(modal.getTemperature()+"°C");
         Picasso.get().load("http:".concat(modal.getIcon())).into(holder.condition_imgv);
         holder.wind_tv.setText(modal.getWindSpeed()+ "Km/hr");
-        SimpleDateFormat input = new SimpleDateFormat("yyyy-MM-dd hh-mm");
+        SimpleDateFormat input = new SimpleDateFormat("yyyy-MM-dd HH:mm");
         SimpleDateFormat output= new SimpleDateFormat("hh-mm aa");
+       // holder.time_tv.setText(modal.getTime());
         try{
             Date t = input.parse(modal.getTime());
             holder.time_tv.setText(output.format(t));
@@ -63,7 +64,7 @@ private ArrayList<WeatherModel> weatherModels;
             super(itemView);
             wind_tv=itemView.findViewById(R.id.windSpeed_tv);
             temperature_tv=itemView.findViewById(R.id.temperature_tv);
-            wind_tv=itemView.findViewById(R.id.windSpeed_tv);
+            time_tv=itemView.findViewById(R.id.time_tv);
             condition_imgv=itemView.findViewById(R.id.condition_imgv);
         }
     }

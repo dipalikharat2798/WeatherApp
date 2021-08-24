@@ -124,7 +124,7 @@ public class MainActivity extends AppCompatActivity {
                         cityName=city;
                     }else {
                         Log.d("TAG", "getCityName:CITY NOT FOUND ");
-                        Toast.makeText(this, "User City Not Found", Toast.LENGTH_SHORT).show();
+                       // Toast.makeText(this, "User City Not Found", Toast.LENGTH_SHORT).show();
                     }
                 }
             }
@@ -149,6 +149,7 @@ public class MainActivity extends AppCompatActivity {
                     int isDay=response.getJSONObject("current").getInt("is_day");
                     String condition = response.getJSONObject("current").getJSONObject("condition").getString("text");
                     String conditionIcon = response.getJSONObject("current").getJSONObject("condition").getString("icon");
+                    condition_tv.setText(condition);
                     Picasso.get().load("http:".concat(conditionIcon)).into(icon_imgv);
                     if (isDay==1){
                         Picasso.get().load("https://www.bing.com/images/search?view=detailV2&ccid=6t8MG8Pa&id=51F03873588F06C13306334CC7E22B404FCF3B53&thid=OIP.6t8MG8Pa8wqnBHkqdnxOiAHaEo&mediaurl=https%3a%2f%2fnewsexpressngr.com%2fimages%2fnews%2fSunny_weather.jpg&exph=375&expw=600&q=day+image+weather&simid=608008936486627333&FORM=IRPRST&ck=844E012013A3D42A6117320F62554DC8&selectedIndex=22&ajaxhist=0&ajaxserp=0").into(black_imgv);

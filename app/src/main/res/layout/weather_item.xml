@@ -53,7 +53,7 @@
             android:layout_margin="4dp"
             android:gravity="center"
             android:padding="3dp"
-            android:text="Time"
+            android:text="windSpeed"
             android:textSize="13dp"
             android:textColor="@color/white"
             android:textAlignment="center"/>
